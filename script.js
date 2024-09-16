@@ -2,25 +2,11 @@
     const botBtn = document.getElementById('botBtn');
     const botDialog = document.querySelector('.bot-dialog');
 
-    // Add a click event to the bot button to open/close the dialog
-    botBtn.addEventListener('click', function (event) {
-        event.stopPropagation(); // Prevent closing the dialog when clicking the button itself
+    // Add a click event to the bot button
+    botBtn.addEventListener('click', function () {
+        // Toggle the open class for both bot button and dialog
         botBtn.classList.toggle('open');
         botDialog.classList.toggle('open');
-    });
-
-    // Add an event listener to close the dialog when clicking outside of it
-    document.addEventListener('click', function (event) {
-        // Check if the dialog is open and the click is outside the dialog and bot button
-        if (botDialog.classList.contains('open') && !botDialog.contains(event.target) && !botBtn.contains(event.target)) {
-            botBtn.classList.remove('open'); // Remove open class from the button
-            botDialog.classList.remove('open'); // Hide the dialog
-        }
-    });
-
-    // Prevent closing the dialog when clicking inside the dialog
-    botDialog.addEventListener('click', function (event) {
-        event.stopPropagation(); // Stop click from propagating to the document
     });
 
 
