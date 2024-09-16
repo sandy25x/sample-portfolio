@@ -11,7 +11,6 @@
 
     // Add an event listener to close the dialog when clicking outside of it
     document.addEventListener('click', function (event) {
-        // Check if the dialog is open and the click is outside the dialog and bot button
         if (botDialog.classList.contains('open') && !botDialog.contains(event.target) && !botBtn.contains(event.target)) {
             botBtn.classList.remove('open'); // Remove open class from the button
             botDialog.classList.remove('open'); // Hide the dialog
@@ -22,7 +21,6 @@
     botDialog.addEventListener('click', function (event) {
         event.stopPropagation(); // Stop click from propagating to the document
     });
-
 
 // Show the 'Recent Works' section
 document.getElementById('recentWorksBtn').addEventListener('click', function(event) {
