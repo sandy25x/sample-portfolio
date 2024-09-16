@@ -59,10 +59,10 @@ nav {
 /* Bot Button */
 #botBtn {
     position: fixed;
-    bottom: 30px;
-    right: 20px;
+    bottom: 30px; /* Place at the bottom of the page */
+    right: 20px; /* Adjust as needed */
     font-size: 40px;
-    z-index: 1000; /* Ensure it is above the footer */
+    z-index: 1001; /* Higher z-index than the dialog */
     background-color: transparent; /* Optional: To make the background invisible */
     border: none;
     cursor: pointer;
@@ -79,16 +79,7 @@ nav {
     display: none;
 }
 
-/* Show hover emoji when the bot dialog is open */
-#botBtn.open .hover-emoji {
-    display: inline-block;
-}
-
-#botBtn.open .default-emoji {
-    display: none;
-}
-
-/* Keep hover emoji visible when hovering */
+/* Show hover emoji on hover and hide the default emoji */
 #botBtn:hover .default-emoji {
     display: none;
 }
@@ -103,49 +94,23 @@ nav {
     border: none; /* Ensure no border is added on hover */
 }
 
-/* Bot dialog */
+/* Bot Dialog */
 .bot-dialog {
     display: none; /* Hidden by default */
     position: fixed;
     bottom: 100px;
     right: 30px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 4px 6px rgb(0, 0, 0);
-    z-index: 1000;
+    z-index: 1000; /* Lower z-index than the bot button */
 }
 
+/* Ensure the bot dialog box stays above other page content */
 .bot-dialog.open {
-    display: block; /* Show dialog when open class is applied */
-}
-
-.bot-dialog p {
-    margin: 0 0 10px;
-    font-size: 16px;
-    color: #00a2ff;
-}
-
-.bot-dialog ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.bot-dialog ul li {
-    margin: 10px 0;
-}
-
-.bot-dialog ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s;
-}
-
-.bot-dialog ul li a:hover {
-    color: #f7bd0e;
+    display: block;
 }
 
 
