@@ -56,13 +56,11 @@ nav {
 }
 
 
-
-
 /* Bot Button */
 #botBtn {
     position: fixed;
-    bottom: 30px; /* Place at the bottom of the page */
-    right: 20px; /* Adjust as needed */
+    bottom: 30px;
+    right: 20px;
     font-size: 40px;
     z-index: 1000; /* Ensure it is above the footer */
     background-color: transparent; /* Optional: To make the background invisible */
@@ -81,7 +79,16 @@ nav {
     display: none;
 }
 
-/* Show hover emoji on hover and hide the default emoji */
+/* Show hover emoji when the bot dialog is open */
+#botBtn.open .hover-emoji {
+    display: inline-block;
+}
+
+#botBtn.open .default-emoji {
+    display: none;
+}
+
+/* Keep hover emoji visible when hovering */
 #botBtn:hover .default-emoji {
     display: none;
 }
@@ -96,7 +103,7 @@ nav {
     border: none; /* Ensure no border is added on hover */
 }
 
-
+/* Bot dialog */
 .bot-dialog {
     display: none; /* Hidden by default */
     position: fixed;
@@ -110,6 +117,9 @@ nav {
     z-index: 1000;
 }
 
+.bot-dialog.open {
+    display: block; /* Show dialog when open class is applied */
+}
 
 .bot-dialog p {
     margin: 0 0 10px;
