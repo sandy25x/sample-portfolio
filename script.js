@@ -1,18 +1,27 @@
-// Toggle the chatbot dialog visibility
-document.getElementById('botBtn').addEventListener('click', function() {
-    const dialog = document.getElementById('botDialog');
-    dialog.style.display = dialog.style.display === 'none' || dialog.style.display === '' ? 'block' : 'none';
-});
-
-// Hide the dialog when clicking outside the bot or dialog
-document.addEventListener('click', function(event) {
-    const dialog = document.getElementById('botDialog');
+    // Select the bot button and bot dialog
     const botBtn = document.getElementById('botBtn');
+    const botDialog = document.querySelector('.bot-dialog');
 
-    if (!dialog.contains(event.target) && !botBtn.contains(event.target)) {
-        dialog.style.display = 'none';
-    }
-});
+    // Add a click event to the bot button to open/close the dialog
+    botBtn.addEventListener('click', function (event) {
+        event.stopPropagation(); // Prevent closing the dialog when clicking the button itself
+        botBtn.classList.toggle('open');
+        botDialog.classList.toggle('open');
+    });
+
+    // Add an event listener to close the dialog when clicking outside of it
+    document.addEventListener('click', function (event) {
+        // Check if the dialog is open and the click is outside the dialog and bot button
+        if (botDialog.classList.contains('open') && !botDialog.contains(event.target) && !botBtn.contains(event.target)) {
+            botBtn.classList.remove('open'); // Remove open class from the button
+            botDialog.classList.remove('open'); // Hide the dialog
+        }
+    });
+
+    // Prevent closing the dialog when clicking inside the dialog
+    botDialog.addEventListener('click', function (event) {
+        event.stopPropagation(); // Stop click from propagating to the document
+    });
 
 
 // Show the 'Recent Works' section
