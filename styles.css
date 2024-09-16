@@ -1,0 +1,482 @@
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1; /* Make sure it stays behind other content */
+    object-fit: fill;
+}
+
+body {
+    margin: 10;
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: #111;
+    color: #fff;
+    cursor: url('cursor.png'), auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a:hover, button:hover {
+    cursor: url('hovercursor.png'), pointer;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the RGBA values for transparency */
+    color: #fff;
+    text-align: center;
+}
+
+/* Grid adjustments for responsiveness */
+@media (max-width: 768px) {
+    #experience {
+        grid-template-columns: 1fr; /* Stack items in one column on smaller screens */
+        grid-template-rows: none;
+    }
+}
+
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    #experience {
+        grid-template-columns: 1fr; /* Single column for mobile view */
+    }
+
+    .experience-item {
+        width: 100%;
+    }
+}
+
+
+
+
+/* Bot Button */
+#botBtn {
+    position: fixed;
+    bottom: 30px; /* Place at the bottom of the page */
+    right: 20px; /* Adjust as needed */
+    font-size: 40px;
+    z-index: 1000; /* Ensure it is above the footer */
+    background-color: transparent; /* Optional: To make the background invisible */
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Default emoji visible by default */
+.default-emoji {
+    display: inline-block;
+}
+
+/* Hover emoji hidden by default */
+.hover-emoji {
+    display: none;
+}
+
+/* Show hover emoji on hover and hide the default emoji */
+#botBtn:hover .default-emoji {
+    display: none;
+}
+
+#botBtn:hover .hover-emoji {
+    display: inline-block;
+}
+
+/* Remove any default button styling on hover */
+#botBtn:hover {
+    background: none; /* Ensure no background is added on hover */
+    border: none; /* Ensure no border is added on hover */
+}
+
+
+.bot-dialog {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgb(0, 0, 0);
+    z-index: 1000;
+}
+
+
+.bot-dialog p {
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: #00a2ff;
+}
+
+.bot-dialog ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bot-dialog ul li {
+    margin: 10px 0;
+}
+
+.bot-dialog ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.bot-dialog ul li a:hover {
+    color: #f7bd0e;
+}
+
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+    #experience {
+        padding: 20px 10px;
+    }
+
+    .experience-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .experience-item p,
+    .experience-item ul li {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Animation for pulsing effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Apply pulsing effect when the button is clicked */
+#botBtn.pulsing {
+    animation: pulse 0.6s;
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+nav ul li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+nav ul li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+nav ul li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+nav ul li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+nav ul li a {
+    color: #fff; /* Default text color */
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    border-radius: 50px;
+}
+
+nav ul li a:hover {
+    border-radius: 130px;
+    background-color: rgba(0, 0, 0, 0); /* White background on hover */
+    color: #00a2ff; /* Black text color on hover */
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+}
+
+.intro-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.intro-text {
+    max-width: 80%;
+    text-align: left;
+    font-size: 2em;
+}
+
+.intro-text h1 {
+    font-size: 2.5em;
+    margin: 0;
+    text-align: left;
+}
+
+.intro-text h2 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.intro-text p {
+    font-size: 0.68em;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: justify;
+}
+
+.recent-works {
+    padding: 50px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.5s ease-out forwards;
+    animation-delay: 1.2s;
+}
+
+.recent-works h2 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+.works {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.work-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    max-width: 300px;
+    text-align: left;
+}
+
+.work-item:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: zoomIn 1.5s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+.work-item h3 {
+    font-size: 1.5em;
+    margin: 15px 0;
+    color: #00a2ff;
+}
+
+.work-item p {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.work-item a {
+    color: #00a2ff;
+    text-decoration: none;
+    bottom: 50%;
+    border-radius: 1px;
+}
+
+.work-item a:hover {
+    padding: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* White background on hover */
+    color: #f5aa16; /* Black text color on hover */
+}
+
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.5s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+.contact h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Social Icons */
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    width: 250px; /* Revert to original width */
+    height: 250px; /* Revert to original height */
+    border-radius: 60%;
+    text-align: center;
+    line-height: 40px; /* Adjust line-height to match height for vertical centering */
+    color: #000000; /* Default icon color */
+    background-color: #f0f0f0; /* Default background color */
+    transition: background-color 0.3s, color 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease-out forwards;
+    animation-delay: 1.8s;
+}
+
+/* LinkedIn Icon specific style */
+.social-icons a[href*="linkedin"] {
+    background-color: rgb(0, 0, 0); /* White background for LinkedIn */
+}
+.social-icons img {
+    width: 250px;
+    height: 250px;
+    filter: grayscale(100%);
+}
+
+#experience {
+    padding: 50px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.5s ease-out forwards;
+    animation-delay: 1.2s;
+}
+
+#experience h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.experience-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    max-width: 300px;
+    width: 300px; /* Fixed width */
+    height: 600px; /* Fixed height to ensure consistency */
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: zoomIn 1.5s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+.experience-item h3 {
+    font-size: 1.5em;
+    margin: 15px 0;
+    color: #00a2ff;
+}
+
+.experience-item p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #00a2ff;
+}
+
+.experience-item ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.experience-item ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #f7f7f7;
+}
+
+/* Add hover effects for experience items */
+.experience-item:hover {
+    background-color: #000000;
+}
+
+.experience-item:hover h3 {
+    color: #f5aa16;
+}
+
+/* Ensure consistent size of experience containers */
+.experience-item {
+    box-sizing: border-box; /* Ensures padding is included within width/height */
+}
+
+
+/* Keyframes for fade-in and slide-up animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for zoom-in effect */
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Footer Styling */
+footer {
+    position: relative;
+    z-index: 1; /* Ensure it stays behind the chat button */
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Or any other color you prefer */
+}
