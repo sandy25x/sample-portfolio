@@ -391,12 +391,14 @@ nav ul li a:hover {
     padding: 50px 20px;
     text-align: center;
     opacity: 0;
+    color:#ffffff;
     transform: translateY(50px);
     animation: fadeInUp 1.5s ease-out forwards;
     animation-delay: 1.5s;
 }
 
 .contact h2 {
+    color:#ffffff;
     font-size: 2em;
     margin-bottom: 20px;
 }
