@@ -8,12 +8,12 @@ html, body {
   body {
     background: linear-gradient(
         -45deg,
-        #1a1a1a,  /* Black */
-        #333333,  /* Dark Grey */
-        #595959,  /* Grey */
-        #808080,  /* Light Grey */
-        #a3a3a3,  /* Silver */
-        #c3c3c3   /* White */  /* Light Grey */
+        #1f1e1e,
+        #262626,  /* Black */
+        #2f2f2f,  /* Grey */
+        #343434,  /* Light Grey */
+        #363636,  /* Silver */
+        #444444   /* White */
     );
     
     
@@ -242,7 +242,7 @@ nav ul li a {
         font-family: "Frank Ruhl Libre", serif;
     font-optical-sizing: auto;
     font-weight: 100;
-    color: #fff; /* Default text color */
+    color: #ffffff; /* Default text color */
     text-decoration: none;
     padding: 10px 20px;
     display: block;
