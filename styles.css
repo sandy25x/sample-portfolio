@@ -12,11 +12,13 @@ html, body {
         #333333,  /* Dark Grey */
         #595959,  /* Grey */
         #808080,  /* Light Grey */
+        #a3a3a3,  /* Silver */
+        #c3c3c3   /* White */  /* Light Grey */
     );
     
     
       background-size: 800% 800%;
-      animation: gradient 10s ease infinite;
+      animation: gradient 15s ease infinite;
   }
   
   @keyframes gradient {
