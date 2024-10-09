@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Protest+Strike&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Protest+Strike&display=swap&family=Dela+Gothic+One&display=swap');
 html, body {
     width: 100%;
     height:100%;
@@ -38,6 +38,9 @@ a:hover, button:hover {
 }
 
 nav {
+    font-family: "Frank Ruhl Libre", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
     position: absolute;
     top: 0;
     left: 0;
@@ -236,6 +239,9 @@ nav ul li:nth-child(4) {
 }
 
 nav ul li a {
+        font-family: "Frank Ruhl Libre", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
     color: #fff; /* Default text color */
     text-decoration: none;
     padding: 10px 20px;
@@ -277,18 +283,27 @@ nav ul li a:hover {
 }
 
 .intro-text h1 {
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 2.5em;
     margin: 0;
     text-align: left;
 }
 
 .intro-text h2 {
+  font-family: "Dela Gothic One", sans-serif;
+  font-weight: 300;
+  font-style: normal;
     font-size: 1em;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .intro-text p {
+    font-family: "Frank Ruhl Libre", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
     font-size: 0.68em;
     margin-top: 10px;
     margin-left: 10px;
@@ -305,6 +320,9 @@ nav ul li a:hover {
 }
 
 .recent-works h2 {
+      font-family: "Dela Gothic One", sans-serif;
+  font-weight: 300;
+  font-style: normal;
     font-size: 2em;
     margin-top: 20px;
 }
@@ -345,6 +363,9 @@ nav ul li a:hover {
 }
 
 .work-item p {
+    font-family: "Frank Ruhl Libre", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
     font-size: 1em;
     margin-bottom: 15px;
 }
@@ -414,6 +435,9 @@ nav ul li a:hover {
 }
 
 #experience h2 {
+      font-family: "Dela Gothic One", sans-serif;
+  font-weight: 300;
+  font-style: normal;
     font-size: 2em;
     margin-bottom: 20px;
 }
@@ -442,6 +466,9 @@ nav ul li a:hover {
 }
 
 .experience-item p {
+    font-family: "Frank Ruhl Libre", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
     font-size: 1em;
     margin-bottom: 15px;
     color: #00a2ff;
